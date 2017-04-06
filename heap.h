@@ -5,7 +5,6 @@
 #ifndef GENERICS_HEAP_H
 #define GENERICS_HEAP_H
 
-#include "comparator.h"
 
 /*
  * Using Macro to enable a struct to store a type of user's choice

@@ -6,8 +6,9 @@
 #include <stdlib.h>
 
 
-
+#include "comparator.h"
 #include "heap.h"
+#include "heap.c"
 
 int main(){
 
