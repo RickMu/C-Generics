@@ -3,9 +3,8 @@ Coding Generics in C.
 The files contain an array implementation of a heap which takes in Generic Node type
 
 File Structure:
-                              main.c
-         includes          /    |    \   
-                comparator.h   heap.h  heap.c
+main.c includes:
+comparator.h   heap.h  heap.c
                              
 
             
