@@ -3,8 +3,10 @@ Coding Generics in C.
 There are two ways to implement "generics" in c,  one is to use Macros and the other is to use void.
 <br/><br/>
 heap.h includes generic functions of heap, utilizing Macros to achieve the affect.
+<br/>
+heap.c doesn't contain anything useful yet, all functions written in heap.h
 <br/><br/>
-User can define his own type of nodes and the wish to sort the node.
+User can define his own type of nodes and how he wish to sort the node.
 <br/>
 To do this:
 <br/>
