@@ -5,7 +5,7 @@ CFLAGS = -Wall -std=c99
 # define libraries to be linked (for example -lm)
 LIB = 
 
-HDR = comparator.h
+HDR = 
 SRC = main.c
 # OBJ is the same as SRC, just replace .c with .h
 OBJ     = $(SRC:.c=.o)
