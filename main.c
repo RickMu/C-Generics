@@ -1,39 +1,39 @@
 //
-// Created by 高静 on 2017/4/6.
+// Created by on 2017/4/6.
 //
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
-#include "comparator.h"
+
+
+typedef struct node{
+    int priority;
+}node_t;
+
+
+#define TYPE node_t
+#define NODE_TYPE TYPE
+#define COMPARATOR n1->priority>n2->priority
 #include "heap.h"
-#include "heap.c"
+
 
 int main(){
+    heap_node_t* h = makeHeap_node_t();
 
-    heap_t* h = makeHeap();
-    h->size= 7;
-    h->tree = (node_t**) malloc( h->size* sizeof(node_t*));
-
-    int tmp[7] = {8,4,-1,3,1,9,10};
-    for(int i = 0;i<h->size;i++){
+    for(int i =0;i<10; i++){
         node_t* n = (node_t*) malloc (sizeof(node_t));
-        n->priority=tmp[i];
-        insert(h, n);
+        n->priority=i;
+        insert_node_t(h,n);
+    }
+    int length = h->insertPos;
+    for(int i = 0;i<length;i++){
+        node_t* m= extractTop_node_t(h);
+        printf("%d, ", m->priority);
     }
 
-    int size=  h->size;
-    for(int i =0;i<size;i++ ){
-        printf("%d  ", h->tree[i]->priority);
-    }
-    printf("\nStored order\n");
 
-    while(!isEmpty(h)){
-        node_t* ret= extracTop(h);
-        printf("%d ", ret->priority);
-    }
-    printf("Extraction");
 
-   return 0;
+    return 0;
 }
