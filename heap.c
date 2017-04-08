@@ -1,9 +1,9 @@
 //
 // Created by 高静 on 2017/3/31.
 //
-
-#include "heap.h"
 #define SIZE 4
+
+
 
 
 //Compare the order of two processes
