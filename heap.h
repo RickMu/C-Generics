@@ -22,7 +22,7 @@ int compareNode(TYPE) (NODE_TYPE* n1, NODE_TYPE* n2){
 #define safeRealloc(T) TOKENPASTE(safeRealloc_,T)
 void safeRealloc(TYPE) ( STRUCT(TYPE)* h){
     h->size+= SIZE;
-    h->tree= (TYPE**)realloc ( h->tree,h->size* sizeof(TYPE*));
+    h->tree= (TYPE **) realloc ( h->tree,h->size* sizeof(TYPE *));
     if(h->tree ==NULL){
         exit(EXIT_FAILURE);
     }
@@ -64,6 +64,8 @@ void bottomUp(TYPE)( STRUCT(TYPE) * h){
 
 void insert(TYPE)( STRUCT(TYPE)* h, NODE_TYPE* p){
     if(h->insertPos == h->size){
+        h->size+=SIZE;
+        //h->tree = (TYPE**) realloc (h->tree, h->size * sizeof(TYPE*));
         safeRealloc(TYPE)(h);
     }
     (h->tree)[h->insertPos] = p;
@@ -99,6 +101,7 @@ void topDown(TYPE)( STRUCT(TYPE) h ){
     }
 }
 
+
 #define heapify(T) TOKENPASTE(heapify_,T)
 void heapify(TYPE) (STRUCT(TYPE) *h){
     if( h->tree[0] == NULL){
@@ -117,6 +120,29 @@ TYPE* extractTop(TYPE)(STRUCT(TYPE) *h ){
     heapify(TYPE) (h);
     return p;
 }
+//Is heap empty
+
+#define isEmptyHeap(T) TOKENPASTE(isEmptyHeap_,T )
+int isEmptyHeap(TYPE)(STRUCT(TYPE)* h){
+    //printf("heap insert %d," ,h.insertPos);
+    if( h->insertPos==0){
+        return 1;
+    }
+    return 0;
+}
+
+//Peek top
+#define peek(T) TOKENPASTE(peek_, T)
+TYPE* peek(TYPE)(STRUCT(TYPE)* h){
+    if( isEmptyHeap(TYPE)(h) ){
+        return NULL;
+    }
+
+    NODE_TYPE*p = h->tree[0];
+    return p;
+}
+
+
 
 /*
 
@@ -132,21 +158,6 @@ NODE_TYPE* replaceTop(STRUCT(TYPE) *h, NODE_TYPE* replace){
     heapify(h);
     return p;
 }
-//Peek top
-NODE_TYPE* peekTop(STRUCT(T)* h){
-    NODE_TYPE*p = h->tree[0];
-    return p;
-}
-
-//Is heap empty
-int isEmpty(STRUCT(TYPE)* h){
-    //printf("heap insert %d," ,h.insertPos);
-    if( h->insertPos==0){
-        return 1;
-    }
-    return 0;
-}
-
 
 */
 
@@ -160,4 +171,8 @@ int isEmpty(STRUCT(TYPE)* h){
 #ifdef NODE_TYPE
 #undef NODE_TYPE
 #endif
+#ifdef STRUCT
+#undef STRUCT
+#endif
+
 

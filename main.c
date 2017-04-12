@@ -11,20 +11,23 @@
 typedef struct node{
     int priority;
 }node_t;
-typedef struct nodeS{
-    int priority;
-}node_s;
 
+typedef struct linkedNode{
+    int priority;
+    struct linkedNode* next;
+}linked_node;
+
+
+
+#define LINKED_NODE linked_node
+#include "linkedList.h"
 
 #define TYPE node_t
 #define NODE_TYPE TYPE
 #define COMPARATOR n1->priority>n2->priority
 #include "heap.h"
 
-#define TYPE node_s
-#define NODE_TYPE TYPE
-#define COMPARATOR n1->priority>n2->priority
-#include "heap.h"
+
 
 
 int main(){
@@ -36,10 +39,22 @@ int main(){
         insert_node_t(h,n);
     }
     int length = h->insertPos;
+
+
+    //To test the extract and peek method as well as isEmpty method which is wrapped within peek
     for(int i = 0;i<length;i++){
+        node_t* n = peek_node_t(h);
+        printf("peek %d, ", n->priority);
         node_t* m= extractTop_node_t(h);
-        printf("%d, ", m->priority);
+        printf(" extract %d, \n", m->priority);
+        printf("insertPost %d\n", h->insertPos);
     }
+
+    node_t* n = peek_node_t(h);
+    if(n==NULL){
+        printf("Equal to NULL");
+    }
+
 
 
 
