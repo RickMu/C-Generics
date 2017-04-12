@@ -31,14 +31,15 @@ To demonstrate that you can define two types of heap.
 There is probably no need for NODE_TYPE and TYPE, this will be changed later
 <br/>
 <br/><br/>
+
 # Linked List <br/>
 A generic linked list is added this hasn't been tested yet, and is just a prototype <br/>
 
 # To Use: <br/>
 #define LINKED_NODE e.g linked_node_s <br/>
 
+# To Preview Your Code Use Preprocessor:
 The code can be previewed, using gcc -E main.c. 
 <br/>
-Preprocessor
 
                         
