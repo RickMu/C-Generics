@@ -32,7 +32,7 @@ void safeRealloc(TYPE) ( STRUCT(TYPE)* h){
 
 STRUCT(TYPE)* MAKE_HEAP(TYPE)(){
     STRUCT(TYPE)* heap =(STRUCT(TYPE)*) malloc (sizeof( STRUCT(TYPE)));
-    heap->tree= (TYPE**) malloc( SIZE*sizeof (TYPE));
+    heap->tree= (TYPE**) malloc( SIZE*sizeof (TYPE *));
     heap->insertPos = 0;
     heap->size=SIZE;
     return heap;
