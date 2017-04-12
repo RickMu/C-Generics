@@ -1,18 +1,16 @@
-Coding Generics in C.
+# Coding Generics in C.
 <br/><br/>
 There was a tiny bug that didn't show in IDE, but did on vm.Fixed
 <br/>
 There are two ways to implement "generics" in c,  one is to use Macros and the other is to use void.
 <br/><br/>
 heap.h includes generic functions of heap, utilizing Macros to achieve the affect.
-<br/>
-heap.c doesn't contain anything useful yet, all functions written in heap.h
 <br/><br/>
 User can define his own type of nodes and how he wish to sort the node.
 <br/>
-To do this:
+# Use heap.h:
 <br/>
-#define NODE_TYPE
+#define NODE_TYPE e.g. node_t
 <br/>
 #define TYPE NODE_TYPE
 <br/>
@@ -20,7 +18,7 @@ To do this:
 <br/>
 #include "heap.h"
 <br/><br/>
-#define NODE_TYPE
+#define NODE_TYPE e.g. node_s
 <br/>
 #define TYPE NODE_TYPE 
 <br/>
@@ -28,15 +26,17 @@ To do this:
 <br/>
 #include "heap.h"
 <br/>
-....
+To demonstrate that you can define two types of heap.
+<br/> 
+There is probably no need for NODE_TYPE and TYPE, this will be changed later
+<br/>
 <br/><br/>
+# Linked List <br/>
+A generic linked list is added this hasn't been tested yet, and is just a prototype <br/>
 
-There is no issue including heap.h twice or more. 
-<br/>
-So if there are two or more classes that need to use heap with different node type,
-<br/>
-there will be no issue.
-<br/><br/>
+# To Use: <br/>
+#define LINKED_NODE e.g linked_node_s <br/>
+
 The code can be previewed, using gcc -E main.c. 
 <br/>
 Preprocessor
