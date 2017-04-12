@@ -28,7 +28,7 @@ User can define his own type of nodes and how he wish to sort the node.
 <br/>
 To demonstrate that you can define two types of heap.
 <br/> 
-There is probably no need for NODE_TYPE and TYPE, this will be changed later
+There is probably no need for both NODE_TYPE and TYPE to exist, this will be changed later
 <br/>
 <br/><br/>
 
