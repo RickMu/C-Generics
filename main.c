@@ -11,9 +11,17 @@
 typedef struct node{
     int priority;
 }node_t;
+typedef struct nodeS{
+    int priority;
+}node_s;
 
 
 #define TYPE node_t
+#define NODE_TYPE TYPE
+#define COMPARATOR n1->priority>n2->priority
+#include "heap.h"
+
+#define TYPE node_s
 #define NODE_TYPE TYPE
 #define COMPARATOR n1->priority>n2->priority
 #include "heap.h"

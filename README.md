@@ -1,5 +1,7 @@
 Coding Generics in C.
 <br/><br/>
+There was a tiny bug that didn't show in IDE, but did on vm.Fixed
+<br/>
 There are two ways to implement "generics" in c,  one is to use Macros and the other is to use void.
 <br/><br/>
 heap.h includes generic functions of heap, utilizing Macros to achieve the affect.

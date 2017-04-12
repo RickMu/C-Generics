@@ -3,7 +3,8 @@
 #define SIZE 4
 #define STRUCT(T) TOKENPASTE(heap_,T)
 
-typedef struct heap{
+#define HEAP(T) TOKENPASTE(h_,T)
+typedef struct HEAP(TYPE){
     NODE_TYPE** tree;
     int insertPos;
     int size;
@@ -97,7 +98,6 @@ void topDown(TYPE)( STRUCT(TYPE) h ){
         }
     }
 }
-
 
 #define heapify(T) TOKENPASTE(heapify_,T)
 void heapify(TYPE) (STRUCT(TYPE) *h){
